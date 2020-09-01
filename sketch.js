@@ -21,7 +21,7 @@ function setup() {
 	//Create the Bodies Here.
 box = new box(300,200,20,20)
 paper = new paper(300,200,10,10)
-ball = new ball(200,200)
+ball = new Ball(200,200,10)
 	Engine.run(engine);
   
 }
@@ -40,5 +40,10 @@ ball.display();
  
 }
 
+function keypressed(){
+	if (keyCode === UP_ARROW){
+		Matter.Body.applyForce(Ball.body,Ball.body.position,{x:85,y:-85});
+	}
+}
 
 

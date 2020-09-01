@@ -1,11 +1,11 @@
-class box{
-  constructor(x,y,width,height){
+class Ball{
+  constructor(x,y,radius){
       var options={
        restitution:0
       }
-      this.body=Bodies.circle(x,y,width,height,options)
-      this.width=width
-      this.height=height
+      this.body=Bodies.circle(x,y,radius,options)
+      this.radius=radius
+   
       World.add(world,this.body)
 
   }
@@ -17,7 +17,7 @@ class box{
       angleMode(RADIANS)
       rotate(angle)
       fill("green")
-      ellips(0,0,this,radius)
+      ellipse(0,0,this,radius)
       pop()
   }
 }
