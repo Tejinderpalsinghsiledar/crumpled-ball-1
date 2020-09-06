@@ -5,7 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 var box ;
-var paper;
+var ground1;
 var ball ;
 
 function preload()
@@ -18,10 +18,13 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	//Create the Bodies Here.
-box = new box(300,200,20,20)
-paper = new paper(300,200,10,10)
-ball = new Ball(200,200,10)
+	//Create the Bodies Here.)
+box1 = new Box(660,580,20,200)
+box2= new Box(500,580,20,200)
+box3= new Box(550,680,170,20)
+
+ground1 = new ground(400,680,800,10)
+ball = new Ball(200,200,25);
 	Engine.run(engine);
   
 }
@@ -31,8 +34,11 @@ function draw() {
   rectMode(CENTER);
   background(0);
   
-box.display();
-paper.display();
+box1.display();
+box2.display();
+box3.display();
+
+ground1.display();
 ball.display();
 
 
@@ -40,9 +46,9 @@ ball.display();
  
 }
 
-function keypressed(){
+function keyPressed(){
 	if (keyCode === UP_ARROW){
-		Matter.Body.applyForce(Ball.body,Ball.body.position,{x:85,y:-85});
+		Matter.Body.applyForce(ball.body,ball.body.position,{x:85,y:-85});
 	}
 }
 
