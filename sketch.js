@@ -21,8 +21,7 @@ function setup() {
 	//Create the Bodies Here.)
 box1 = new Box(660,580,20,200)
 box2= new Box(500,580,20,200)
-box3= new Box(550,680,170,20)
-
+box3=new Box(585,660,170,20)
 ground1 = new ground(400,680,800,10)
 ball = new Ball(200,200,25);
 	Engine.run(engine);
